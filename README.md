@@ -1,3 +1,13 @@
-# datastructures
+# Data Structures
 
-data structures exercises with javascript
+[Pseudoclassical OOP](./src/1/readme.md)
+
+
+[Stacks](./src/2/readme.md)
+
+
+[Queues](./src/3/readme.md)
+
+
+
+ 
