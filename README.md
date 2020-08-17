@@ -8,6 +8,8 @@
 
 [Queues](./src/3/readme.md)
 
+[LinkedList](./src/LinkedList/readme.md)
+
 
 
  
