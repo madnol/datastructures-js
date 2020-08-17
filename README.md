@@ -3,12 +3,12 @@
 [Pseudoclassical OOP](./src/1/readme.md)
 
 
-[Stacks](./src/2/readme.md)
+[Stacks](./src/2/)
 
 
-[Queues](./src/3/readme.md)
+[Queues](./src/3/)
 
-[LinkedList](./src/LinkedList/readme.md)
+[LinkedList](./src/LinkedList/)
 
 
 
