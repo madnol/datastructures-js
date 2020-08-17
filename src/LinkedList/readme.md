@@ -28,7 +28,8 @@ Implement all possible es6 array methods to linkedlist
 | ✅  | nodesAsArray |   returnin all nodes in array          | O(n)       |
 | ✅  | toString     |  logs prettified  string           | O(n)       |
 | ✅  | reduce       |  processing node data with accumulator           | O(n)       |
-| ✅  | removeHead   |    removes head         | O(n)       |
+| ✅  | removeHead   |    removes head         | O(1)       |
+| ✅  | removeTail   |    removes tail         | O(1)       |
 | ✅  | some   |    returns boolean if at least one node mets with condition        | O(n)       |
 | ✅  | slice   |   slicing linked list with  given range   | O(n)       |
 
