@@ -1,6 +1,6 @@
 # Data Structures
 
-[Pseudoclassical OOP](./src/1/readme.md)
+[Pseudoclassical OOP](./src/1/)
 
 
 [Stacks](./src/2/)

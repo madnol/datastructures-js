@@ -29,17 +29,19 @@ class LinkedList implements ILinkedList {
            if(head.next){
                 this.head = head.next;
                 this.head.setPrevNode(null)
+                this.size--
                 return head.data;
            }
            else{
                this.head=null;
+               this.size--
                return  head.data;
            }
         }
         else {
             return;
         }
-        this.size--
+     
     };
     addToTail(data: any): void {
         const nodeToAdd = new Node(data);
