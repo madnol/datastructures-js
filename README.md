@@ -1,12 +1,8 @@
 # Data Structures
 
-[Pseudoclassical OOP](./src/1/)
+[Stack](./src/Stack/)
 
-
-[Stacks](./src/2/)
-
-
-[Queues](./src/3/)
+[Queue](./src/Queue/)
 
 [LinkedList](./src/LinkedList/)
 

@@ -9,44 +9,10 @@
 
 **O**ut the stack.
 
-```js
+ | Status | Name    | Description | Complexity |
+|--------|---------|-------------|------------|
+| ✅      | push | adds data to  stack          | O(1)       |
+|  ✅     | pop |      remove and returns last data from queue       | O(1)       |
+|  ✅      | peek    |  returns last data in stack           | O(1)       |
+|   ✅     | size    |       returns size of stack      | O(1)       |
 
-interface IStack{
-    storage:Array<any>
-}
-class Stack implements IStack  {
-    storage:Array<any>
-    constructor(storage:Array<any>=[]){
-        this.storage = storage
-    }
-    push(value:any):Array<any>{
-        this.storage.push(value);
-        return this.storage;
-    }
-    peek():any{
-        return this.storage[this.storage.length-1]
-    }
-    pop():any{
-         let popped= this.storage.pop();
-         return popped;
-    }
-    size():number{
-        return this.storage.length;
-    }
-}
-export default Stack;
-
-```
-
-
-
-### Challenge 
-
-
-* Implement a stack without using an array of string as storage
-
-* Implement a stack with a min method which returns the minimum element currently in the stack. This method should have O(1) time complexity. Make sure your implementation handles duplicates.
-
-
-
-[Solution](./challenge/StackObject.ts)

@@ -26,22 +26,22 @@ class LinkedList implements ILinkedList {
     removeHead(): any {
         const head = this.head;
         if (head) {
-           if(head.next){
+            if (head.next) {
                 this.head = head.next;
                 this.head.setPrevNode(null)
                 this.size--
                 return head.data;
-           }
-           else{
-               this.head=null;
-               this.size--
-               return  head.data;
-           }
+            }
+            else {
+                this.head = null;
+                this.size--
+                return head.data;
+            }
         }
         else {
             return;
         }
-     
+
     };
     addToTail(data: any): void {
         const nodeToAdd = new Node(data);
@@ -58,9 +58,27 @@ class LinkedList implements ILinkedList {
 
     };
     removeTail(): any {
-        const prevNode = this.tail.prev;
-        this.tail = prevNode;
-        this.tail.setNextNode(null)
+        const tail = this.tail;
+        if(tail){
+            if (this.tail.prev) {
+                const prevNode = tail.prev;
+                this.tail = prevNode;
+                this.tail.setNextNode(null);
+                this.size--;
+                return tail.data;
+              
+            }
+            else {
+                this.head=null;
+                this.tail = null;
+                this.size--;
+                return tail.data;
+            }
+        }
+        else{
+            throw new Error("Linked list is empty")
+        }
+
     };
     find(callback: Function): any {
         if (callback && callback instanceof Function) {
@@ -85,8 +103,8 @@ class LinkedList implements ILinkedList {
             let current = this.head;
             let i = 0
             while (i < this.size) {
-                if (callback(current,i)) {
-                    index=i;
+                if (callback(current, i)) {
+                    index = i;
                     break;
                 }
 
@@ -131,11 +149,11 @@ class LinkedList implements ILinkedList {
     concat(list: LinkedList): LinkedList {
         if (list instanceof LinkedList) {
             let current = list.head
-            if(current){
-                this.tail=current;
+            if (current) {
+                this.tail = current;
                 current.setPrevNode(this.tail)
             }
-           
+
             return this;
         }
         else {
@@ -187,8 +205,8 @@ class LinkedList implements ILinkedList {
             let current = this.head;
             let i = 0
             while (i < this.size) {
-                if (callback(current,i)) {
-                    if (matches.size===1) {
+                if (callback(current, i)) {
+                    if (matches.size === 1) {
                         matches.addToTail(current.data)
                     }
                     else {
@@ -200,8 +218,8 @@ class LinkedList implements ILinkedList {
                 current = current.next
                 i++
             }
-            
-         
+
+
             return matches;
         }
         else {
@@ -283,38 +301,38 @@ class LinkedList implements ILinkedList {
             throw new Error("Callback is not valid")
         }
     }
-    sort(list:LinkedList=this,callback:Function=(a,b)=>a-b):LinkedList{
+    sort(list: LinkedList = this, callback: Function = (a, b) => a - b): LinkedList {
         // not completed + buggy
-        if(list.size===1){
+        if (list.size === 1) {
             return list;
         }
-         
-        let mid = Math.floor(list.size/2);
-        let leftList = list.slice(0,mid);
-        let rightList = list.slice(mid,list.size);
-       
-        function merge(left,right){
+
+        let mid = Math.floor(list.size / 2);
+        let leftList = list.slice(0, mid);
+        let rightList = list.slice(mid, list.size);
+
+        function merge(left, right) {
             let sortedList = new LinkedList();
-            while(left.head && right.head){
-                
-                if(left.head.data<right.head.data){
+            while (left.head && right.head) {
+
+                if (left.head.data < right.head.data) {
                     sortedList.addToHead(left.head.data);
                     left.removeHead();
                 }
-                else{
+                else {
                     sortedList.addToHead(right.head.data);
                     right.removeHead();
                 }
             }
-            
-           
-            return  sortedList.concat(left).concat(right)
+
+
+            return sortedList.concat(left).concat(right)
         }
-         
-        return merge(this.sort(leftList,callback),this.sort(rightList,callback));
+
+        return merge(this.sort(leftList, callback), this.sort(rightList, callback));
     }
-    slice(startIndex:number,endIndex:number):LinkedList{
-        return this.filter((node,i)=>i>=startIndex && i<=endIndex?node:false)
+    slice(startIndex: number, endIndex: number): LinkedList {
+        return this.filter((node, i) => i >= startIndex && i <= endIndex ? node : false)
     }
 
 }

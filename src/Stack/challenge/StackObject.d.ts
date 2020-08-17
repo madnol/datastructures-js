@@ -1,3 +1,0 @@
-interface IStackObject {
-    storage:object;
-}
