@@ -6,6 +6,8 @@
 
 [LinkedList](./src/LinkedList/)
 
+[HashTable](./src/HashTable/)
+
 
 
  

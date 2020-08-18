@@ -30,6 +30,7 @@ Implement all possible es6 array methods to linkedlist
 | ✅  | reduce       |  processing node data with accumulator           | O(n)       |
 | ✅  | removeHead   |    removes head         | O(1)       |
 | ✅  | removeTail   |    removes tail         | O(1)       |
+| ✅  | reverse   |    reverses linked list         | O(n)       |
 | ✅  | some   |    returns boolean if at least one node mets with condition        | O(n)       |
 | ✅  | slice   |   slicing linked list with  given range   | O(n)       |
 
