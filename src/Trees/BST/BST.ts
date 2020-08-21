@@ -18,7 +18,7 @@ class BST  implements IBST{
     depth:number;
     left:BST;
     right:BST;
-    constructor(data:any,depth:number=1){
+    constructor(data:any=Math.floor(Math.random()*100),depth:number=1){
         this.data=data;
         this.depth=depth;
     }
@@ -69,15 +69,51 @@ class BST  implements IBST{
             return this.data;
         }
     }
-    depthFirstTraversal(childs=[]):Array<any>{
+    dfsInorder(childs=[]):Array<any>{
         if(this.left){
-            this.left.depthFirstTraversal(childs);
+            this.left.dfsInorder(childs);
         }
         childs.push(this.data)
         if(this.right){
-            this.right.depthFirstTraversal(childs);
+            this.right.dfsInorder(childs);
         }
         return childs;
+    }
+    dfsPreOrder(childs=[]):Array<any>{
+        childs.push(this.data)
+        if(this.left){
+            this.left.dfsPreOrder(childs)
+        }
+        if(this.right){
+            this.right.dfsPreOrder(childs)
+        }
+        return childs;
+    }
+    dfsPostOrder(childs=[]):Array<any>{
+        if(this.left){
+            this.left.dfsPostOrder(childs)
+        }
+        if(this.right){
+            this.right.dfsPostOrder(childs)
+        }
+        childs.push(this.data)
+        return childs;
+    }
+    bfs(childs=[]){
+        let queue : Array<BST>= [ this ];
+        while (queue.length > 0) {
+          const current = queue.shift();
+          if(current){
+            childs.push(current.data)
+          }
+         if(current.left){
+            queue =queue.concat(current.left)
+         }
+         if(current.right){
+            queue =queue.concat(current.right)
+         }
+        }
+        return childs
     }
      
 }

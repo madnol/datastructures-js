@@ -1,6 +1,7 @@
-import BloomFilter from "./BloomFilters/BloomFilters";
+import BST from "./Trees/BST/BST";
 
-const bloomFilter= new BloomFilter(15);
+const bst = new BST(8)
+const values = [3, 1, 6, 4, 7, 10, 14, 13];
+values.forEach(value=>bst.insert(value))
+console.log(bst.bfs())
 
-bloomFilter.add("1")
-bloomFilter.add("2")
