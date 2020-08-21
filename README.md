@@ -1,12 +1,18 @@
 # Data Structures
 
-[Stack](./src/Stack/)
+- [Stack](./src/Stack/)
 
-[Queue](./src/Queue/)
+- [Queue](./src/Queue/)
 
-[LinkedList](./src/LinkedList/)
+- [LinkedList](./src/LinkedList/)
 
-[HashTable](./src/HashTable/)
+- [HashTable](./src/HashTable/)
+
+- [Trees](./src/Trees/)
+
+    - [Binary Search Tree](./src/Trees/BST/)
+
+- [Bloom Filters](./src/BloomFilters/)
 
 
 

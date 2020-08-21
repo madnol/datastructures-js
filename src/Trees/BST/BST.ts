@@ -1,3 +1,17 @@
+ /**
+   * . . . 
+   * @example
+   * ```typescript
+   * const bst = new BST(5);
+   * const numbers = [3, 2, 1, 0, 4, 8,6, 9, 10, 7]
+   * for (let i = 0; i < numbers.length; i++) {
+   *    const number = numbers[i]
+   *    bst.insert(number)
+   * }
+   *const found = bst.find(1) ; // returns B 
+   * ``` 
+   */
+
 import IBST from "./BST";
 class BST  implements IBST{
     data:any|undefined 
@@ -68,3 +82,4 @@ class BST  implements IBST{
      
 }
 export default BST;
+
